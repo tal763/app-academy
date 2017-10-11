@@ -46,6 +46,7 @@
 
   def next_turn(ending_cup_idx)
     if ending_cup_idx == 6 || ending_cup_idx == 13
+      # why symbol?
       :prompt
     elsif @cups[ending_cup_idx].count == 1
       :switch
@@ -68,9 +69,10 @@
 
   def winner
     player1_count = @cups[6].count
-    player2_count = cups[13].count
+    player2_count = @cups[13].count
 
-     if one_side_empty? && @cups[6].count == @cups[13].count
+      # one_side_empty? && @cups[6].count == @cups[13].count
+       if player1_count == player2_count
        :draw
      else
      player1_count > player2_count ? @name1 : @name2
